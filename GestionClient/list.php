@@ -1,7 +1,7 @@
 <?php
-require_once 'config/Database.php';
-require_once 'models/ClientModel.php';
-require_once 'controllers/ClientController.php';
+require_once 'GestionClient\config\Database.php';
+require_once 'GestionClient\models\ClientModel.php';
+require_once 'GestionClient\controllers\ClientController.php';
 
 $db = (new Database())->getConnection();
 $model = new ClientModel($db);
@@ -43,4 +43,4 @@ if (isset($_GET['error'])) {
     $error = htmlspecialchars($_GET['error']);
 }
 
-include 'views/clientListView.php';
+include 'GestionClient\views\clientListView.php';

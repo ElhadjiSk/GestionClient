@@ -1,7 +1,7 @@
 <?php
-require_once 'config/Database.php';
-require_once 'models/ClientModel.php';
-require_once 'controllers/ClientController.php';
+require_once 'GestionClient\config\Database.php';
+require_once 'GestionClient\models\ClientModel.php';
+require_once 'GestionClient\controllers\ClientController.php';
 
 $db = (new Database())->getConnection();
 $model = new ClientModel($db);
@@ -18,10 +18,6 @@ if ($action === 'addClient') {
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
-require_once 'config/Database.php';
-require_once 'models/UserModel.php';
-require_once 'controllers/AuthController.php';
 
 // Initialisation de la base de données
 $database = new Database();
@@ -46,7 +42,7 @@ switch ($action) {
         session_start();
         if (isset($_SESSION['user_id'])) {
             echo "Utilisateur connecté : " . $_SESSION['username'];
-            include 'views/addClientView.php';
+            include 'GestionClient\views\addClientView.php';
         } else {
             echo "Utilisateur non connecté, redirection vers la page de connexion.";
             header('Location: index.php?action=login');

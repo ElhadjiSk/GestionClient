@@ -31,15 +31,15 @@ class AuthController {
                 } else {
                     echo "Le mot de passe ne correspond pas.";
                     $error = "Nom d'utilisateur ou mot de passe incorrect.";
-                    include 'views/loginView.php';
+                    include 'GestionClient\views\loginView.php';
                 }
             } else {
                 echo "Utilisateur non trouvé.";
                 $error = "Nom d'utilisateur ou mot de passe incorrect.";
-                include 'views/loginView.php';
+                include 'GestionClient\views\loginView.php';
             }
         } else {
-            include 'views/loginView.php';
+            include 'GestionClient\views\loginView.php';
         }
     }
 
